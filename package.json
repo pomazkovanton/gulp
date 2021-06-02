@@ -1,0 +1,42 @@
+{
+  "name": "gulp-build",
+  "version": "1.0.0",
+  "description": "gulp, sass, pug, eslint, stylelint",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "gulp watch",
+    "build:dev": "gulp build",
+    "build:prod": "gulp build --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pomazkovanton/gulp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/pomazkovanton/gulp/issues"
+  },
+  "homepage": "https://github.com/pomazkovanton/gulp#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/eslint-parser": "^7.14.4",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/register": "^7.13.16",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-if": "^3.0.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify-es": "^2.0.0",
+    "webpack": "^5.38.1",
+    "webpack-stream": "^6.1.2"
+  }
+}
