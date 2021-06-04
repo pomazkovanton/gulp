@@ -10,7 +10,7 @@ const config = {
     fonts: `${srcPath}/assets/fonts`,
     images: `${srcPath}/assets/images`,
     iconsMomo: `${srcPath}/assets/icons/mono`,
-    iconsMulti: `${srcPath}/assets/icons/multi`
+    iconsMulti: `${srcPath}/assets/icons/multi`,
   },
   dest: {
     root: destPath,

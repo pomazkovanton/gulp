@@ -7,16 +7,17 @@ import { pugBuild, pugWatch } from './gulp/tasks/pug';
 import { sassBuild, sassWatch } from './gulp/tasks/styles';
 import { fontsBuild, fontsWatch } from './gulp/tasks/fonts';
 import { imagesBuild, imagesWatch } from './gulp/tasks/images';
+import { spritesBuild, spritesWatch } from './gulp/tasks/sprite';
 
 config.setEnv();
 
 export const build = series(
   clean,
-  parallel(scriptBuild, pugBuild, sassBuild, fontsBuild, imagesBuild),
+  parallel(scriptBuild, pugBuild, sassBuild, fontsBuild, imagesBuild, spritesBuild),
 );
 
 export const watch = series(
   build,
   server,
-  parallel(pugWatch, scriptWatch, sassWatch, fontsWatch, imagesWatch),
+  parallel(pugWatch, scriptWatch, sassWatch, fontsWatch, imagesWatch, spritesWatch),
 );
