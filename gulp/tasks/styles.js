@@ -18,7 +18,9 @@ export const sassBuild = () => src(`${config.src.sass}/style.scss`)
     ],
   }))
   .pipe(gulpif(config.isDev, sourcemaps.init()))
-  .pipe(sass())
+  .pipe(sass({
+    includePaths: ['./node_modules'],
+  }))
   .pipe(gulpif(config.isProd, gcmq()))
   .pipe(gulpif(config.isProd, autoprefixer()))
   .pipe(gulpif(config.isProd, cleanCSS({ level: 2 })))
