@@ -3,8 +3,6 @@ import pug from 'gulp-pug';
 import gulpif from 'gulp-if';
 import { setup as emittySetup } from '@zoxon/emitty';
 import plumber from 'gulp-plumber';
-import pugLintStylish from 'puglint-stylish';
-import pugLinter from 'gulp-pug-linter';
 import config from '../config';
 
 const emittyPug = emittySetup(config.src.pug, 'pug', {
@@ -20,7 +18,6 @@ global.emittyChangedFile = {
 export const pugBuild = () => (
   src(`${config.src.pug}/*.pug`)
     .pipe(plumber())
-    .pipe(pugLinter({ reporter: pugLintStylish }))
     .pipe(
       gulpif(
         global.watch,

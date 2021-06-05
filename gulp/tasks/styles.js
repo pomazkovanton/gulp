@@ -7,16 +7,12 @@ import rename from 'gulp-rename';
 import sourcemaps from 'gulp-sourcemaps';
 import plumber from 'gulp-plumber';
 import sass from 'gulp-sass';
-import gulpStylelint from 'gulp-stylelint';
+import sassGlob from 'gulp-sass-glob';
 import config from '../config';
 
 export const sassBuild = () => src(`${config.src.sass}/style.scss`)
   .pipe(plumber())
-  .pipe(gulpStylelint({
-    reporters: [
-      { formatter: 'string', console: true }
-    ],
-  }))
+  .pipe(sassGlob())
   .pipe(gulpif(config.isDev, sourcemaps.init()))
   .pipe(sass({
     includePaths: ['./node_modules'],
