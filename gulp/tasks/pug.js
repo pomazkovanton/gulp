@@ -3,6 +3,7 @@ import pug from 'gulp-pug';
 import gulpif from 'gulp-if';
 import { setup as emittySetup } from '@zoxon/emitty';
 import plumber from 'gulp-plumber';
+import pugIncludeGlob from 'pug-include-glob';
 import config from '../config';
 
 const emittyPug = emittySetup(config.src.pug, 'pug', {
@@ -27,8 +28,8 @@ export const pugBuild = () => (
         ),
       ),
     )
-    .pipe(gulpif(config.isDev, pug({ pretty: true })))
-    .pipe(gulpif(config.isProd, pug({ pretty: false })))
+    .pipe(gulpif(config.isDev, pug({ pretty: true, plugins: [pugIncludeGlob()] })))
+    .pipe(gulpif(config.isProd, pug({ pretty: false, plugins: [pugIncludeGlob()] })))
     .pipe(dest(config.dest.html))
 );
 
